@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Profile Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create Your Profile</h1>
+        <form id="profileForm">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+                <span class="error-message" id="username-error"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <span class="error-message" id="email-error"></span>
+            </div>
+            
+            <div class="form-group password-container">
+                <label for="password">Password:</label>
+                <div class="password-input-container">
+                    <input type="password" id="password" name="password">
+                    <button type="button" id="togglePassword">Show</button>
+                </div>
+                <span class="error-message" id="password-error"></span>
+                <div id="password-strength" class="password-strength">
+                    <div class="strength-bar"></div>
+                    <span class="strength-text"></span>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="bio">Bio:</label>
+                <textarea id="bio" name="bio" rows="4"></textarea>
+                <div id="char-count" class="char-count">0/200</div>
+                <span class="error-message" id="bio-error"></span>
+            </div>
+            
+            <div class="form-group">
+                <label>Interests:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="tech" name="interests" value="technology">
+                    <label for="tech">Technology</label>
+                    
+                    <input type="checkbox" id="sports" name="interests" value="sports">
+                    <label for="sports">Sports</label>
+                    
+                    <input type="checkbox" id="arts" name="interests" value="arts">
+                    <label for="arts">Arts</label>
+                    
+                    <input type="checkbox" id="science" name="interests" value="science">
+                    <label for="science">Science</label>
+                </div>
+                <span class="error-message" id="interests-error"></span>
+            </div>
+            
+            <button type="submit" id="submitBtn">Create Profile</button>
+        </form>
+        
+        <div id="formResult" class="form-result hidden">
+            <h2>Profile Created!</h2>
+            <div id="profileSummary"></div>
+            <button id="resetBtn">Create Another Profile</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
